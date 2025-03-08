@@ -7,6 +7,14 @@ export default function HomeScreen() {
   // console.log(counter);
   // console.log(setCounter);
 
+  const [counter, setCounter] = useState(0);
+  const increase = () => {
+    setCounter(counter + 1);
+  }
+  const reset = () => {
+    setCounter(0);
+  }
+
   const [color, setColor] = useState("red");
 
   const changeColor = () => {
@@ -34,10 +42,11 @@ export default function HomeScreen() {
     <div
       style={{
         display: "flex",
-        justifyContent: "center",
         alignItems: "center",
-        height: "100vh",
         flexDirection: "column",
+        overflowY: "auto",
+        width: "100%",
+        backgroundColor: "green",
       }}
     >
       <div
@@ -47,6 +56,7 @@ export default function HomeScreen() {
           borderRadius: "10px",
           width: "50%", // Adjust width to make it responsive
           minWidth: "300px", // Prevent it from being too small
+         
         }}
       >
         <h1>Welcome to My Web App</h1>
@@ -67,6 +77,11 @@ export default function HomeScreen() {
           It is a {car.color} {car.model} from {car.year}
         </p>
         <button onClick={setcarblue}>change car color</button>
+      </div>
+      <div>
+        <h1>Counter: {counter}</h1>
+        <button onClick={increase}>Increase</button>
+        <button style = {{marginLeft: 100}} onClick={reset}>reset</button>
       </div>
     </div>
   );
