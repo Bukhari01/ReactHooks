@@ -13,9 +13,22 @@ export default function HomeScreen() {
     setColor("blue");
   };
 
-  const [brand, setBrand] = useState("Ferrari");
-  const [model, setModel] = useState("Rome");
-  const [year, setYear] = useState("2025");
+  // const [brand, setBrand] = useState("Ferrari");
+  // const [model, setModel] = useState("Rome");
+  // const [year, setYear] = useState("2025");
+
+  const [car,setCar] = useState({
+    brand: "ferrari",
+    model: "Roma",
+    year: "2025",
+    color:"red"
+  })
+  const setcarblue = function(){
+    setCar((previous) => {
+      console.log(previous);
+      return {...previous, color: "blue"}
+    })
+  }
 
   return (
     <div
@@ -49,10 +62,11 @@ export default function HomeScreen() {
           minWidth: "300px", // Prevent it from being too small
         }}
       >
-        <h1>My {brand}</h1>
+        <h1>My {car.brand}</h1>
         <p>
-          It is a {color} {model} from {year}
+          It is a {car.color} {car.model} from {car.year}
         </p>
+        <button onClick={setcarblue}>change car color</button>
       </div>
     </div>
   );
