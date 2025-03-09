@@ -27,7 +27,7 @@ export default function HomeScreen() {
   };
 
   return (
-    <div style={{ display: "flex", alignItems: "center", flexDirection: "column", overflowY: "auto", width: "100%", backgroundColor: "green", minHeight: "100vh", padding: 20 }}>
+    <div style={{ display: "flex", alignItems: "center", flexDirection: "column", overflowY: "auto", width: "100vw", backgroundColor: "green", minHeight: "100vh", padding: 20 }}>
       
       {/* Button to navigate to ScreenTwo */}
       <button 

@@ -27,9 +27,10 @@ export default function ScreenTwo() {
         textAlign: "center",
       }}
     >
-      <div style={{ marginBottom: "30%" }}>
+      <div style={{ marginBottom: "20%" }}>
         <button onClick={() => navigate("/")}>Go Back to Home</button>
         <h1 style={{ color: "red" }}>I have rendered {count} times!</h1>
+        <button onClick={() => navigate("/ScreenThree")}>Go to Next Sceen</button>
       </div>
     </div>
   );
