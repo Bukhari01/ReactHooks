@@ -10,7 +10,9 @@ export default function ScreenTwo() {
     setTimeout(() => {
       setCount((count) => count + 1);
     }, 2000);
-  });
+  },[count]);
+
+  //[] renders only once
 
   return (
     <div
