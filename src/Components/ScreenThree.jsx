@@ -18,6 +18,11 @@ export default function ScreenThree() {
     count.current = count.current + 1;
   }, [value]);
 
+  const inputelem = useRef();
+  const btnclicked = () => {
+      console.log(inputelem.current.value)
+  }
+
   return (
     <div
       style={{
@@ -51,6 +56,10 @@ export default function ScreenThree() {
           +1
         </button>
         <h1>Count: {count.current}</h1>
+      </div>
+      <div>
+        <input type = "text" ref={inputelem}></input>
+        <button onClick={btnclicked}>click here</button>
       </div>
     </div>
   );
