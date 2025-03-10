@@ -19,8 +19,11 @@ export default function ScreenThree() {
   }, [value]);
 
   const inputelem = useRef();
+
+  const [show, setShow] = useState('');
+
   const btnclicked = () => {
-      console.log(inputelem.current.value)
+    setShow(inputelem.current.value)
   }
 
   return (
@@ -60,6 +63,9 @@ export default function ScreenThree() {
       <div>
         <input type = "text" ref={inputelem}></input>
         <button onClick={btnclicked}>click here</button>
+      </div>
+      <div>
+      <h1>{show}</h1>
       </div>
     </div>
   );
