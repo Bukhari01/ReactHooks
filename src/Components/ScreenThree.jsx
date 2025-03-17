@@ -26,6 +26,7 @@ export default function ScreenThree() {
     setShow(inputelem.current.value)
   }
 
+
   return (
     <div
       style={{
@@ -60,6 +61,7 @@ export default function ScreenThree() {
         </button>
         <h1>Count: {count.current}</h1>
       </div>
+      <button onClick={() => {navigate("/ScreenFour")}}>Next Screen</button>
       <div>
         <input type = "text" ref={inputelem}></input>
         <button onClick={btnclicked}>click here</button>
