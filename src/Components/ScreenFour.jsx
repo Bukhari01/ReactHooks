@@ -1,9 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function ScreenFour() {
   const navigate = useNavigate();
+  const [number, setNumber] = useState(0);
+  const [counter, setCounter] = useState(0);
 
+  const cubenum = function (num) {
+    console.log(`calculation done!`);
+    return Math.pow(num, 3);
+  };
+
+  const result = useMemo(() => {return cubenum(number)},[number]);
 
   return (
     <div
@@ -18,10 +26,19 @@ export default function ScreenFour() {
         textAlign: "center",
       }}
     >
+      <button onClick={() => navigate("/")}>Go Back to Home</button>
       <div style={{ marginBottom: "20%" }}>
-        <button onClick={() => navigate("/")}>Go Back to Home</button>
-        <button onClick={() => navigate("/ScreenThree")}>Go to Next Sceen</button>
+        <input
+          type="number"
+          value={number}
+          onChange={(e) => {
+            setNumber(e.target.value);
+          }}
+        />
+        <h1>Cube of the number: {result}</h1>
       </div>
+      <button onClick={() => setCounter(counter + 1)}>Counter++</button>
+      <h1>Counter: {counter}</h1>
     </div>
   );
 }
