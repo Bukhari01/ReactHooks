@@ -39,6 +39,8 @@ export default function ScreenFour() {
       </div>
       <button onClick={() => setCounter(counter + 1)}>Counter++</button>
       <h1>Counter: {counter}</h1>
+      <button onClick={() => navigate("/ScreenFive")}>next screen</button>
+
     </div>
   );
 }
